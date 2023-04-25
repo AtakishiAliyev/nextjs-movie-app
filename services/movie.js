@@ -29,6 +29,10 @@ const getMovie = async (movieId) => {
     return fetchMovieApi(`/movie/${movieId}`);
 };
 
+const getFeaturedMovie = async (movieId) => {
+    return fetchMovieApi("/discover/movie", "sort_by=popularity.desc&vote_count.gte=500");
+};
+
 export {
     fetchMovieApi,
     getSingleCategory,
@@ -36,4 +40,5 @@ export {
     getTopRatedMovies,
     getPopularMovies,
     getMovie,
+    getFeaturedMovie,
 }
